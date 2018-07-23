@@ -12,6 +12,14 @@ I would have loved to use an official Postfix container, but that doesn't exist.
 * `*`: Postfix configuration files that will be processed by `postmap` after being copied.
 * `*.sh`: Shell scripts that will be executed, mainly containing `postconf` calls.
 
+## Build this image
+
+```
+git clone https://github.com/rompe/postfix-alpine.git
+cd postfix-alpine.git
+docker build . -t rompe/postfix-alpine
+```
+
 
 ## Quick test usage:
 
