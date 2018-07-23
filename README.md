@@ -13,7 +13,7 @@ I would have loved to use an official Postfix container, but that doesn't exist.
 * `*.sh`: Shell scripts that will be executed, mainly containing `postconf` calls.
 
 
-Quick test usage:
+## Quick test usage:
 
 ```
 mkdir /tmp/postfix-config
