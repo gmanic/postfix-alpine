@@ -1,3 +1,5 @@
+## Intro
+
 This is an attempt to get a recent version of Postfix running on CentOS or other stable distibutions.
 
 Since current CentOS releases come with somewhat old versions of Postfix but I wanted to use features of newer Postfix versions while staying with CentOS as a base system, I ended up with running a container for Postfix. Alpine contains a reasonably new version of Postfix.
@@ -12,16 +14,16 @@ I would have loved to use an official Postfix container, but that doesn't exist.
 * `*`: Postfix configuration files that will be processed by `postmap` after being copied.
 * `*.sh`: Shell scripts that will be executed, mainly containing `postconf` calls.
 
-## Build this image
+## Build
 
 ```
 git clone https://github.com/rompe/postfix-alpine.git
-cd postfix-alpine.git
+cd postfix-alpine
 docker build . -t rompe/postfix-alpine
 ```
 
 
-## Quick test usage:
+## Quick test usage
 
 ```
 mkdir /tmp/postfix-config
