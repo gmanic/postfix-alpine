@@ -14,6 +14,18 @@ I would have loved to use an official Postfix container, but that doesn't exist.
 * `*`: Postfix configuration files that will be processed by `postmap` after being copied.
 * `*.sh`: Shell scripts that will be executed, mainly containing `postconf` calls.
 
+
+## Standard usage
+
+This is available on the Docker Store:
+
+```
+docker pull rompe/postfix-alpine
+```
+
+In case you want to play a bit more or you happen to be me, there are other options:
+
+
 ## Build
 
 ```
@@ -44,3 +56,9 @@ In another terminal:
 swaks --to root@example.com --server localhost --port 50025
 ```
 
+## Publish
+
+```
+docker login
+docker push rompe/postfix-alpine
+```
