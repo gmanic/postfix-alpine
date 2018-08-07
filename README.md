@@ -17,7 +17,7 @@ I would have loved to use an official Postfix container, but that doesn't exist.
 
 ## Standard usage
 
-This is available on the Docker Store:
+This is available on the [Docker Store](https://store.docker.com/community/images/rompe/postfix-alpine):
 
 ```
 docker pull rompe/postfix-alpine
