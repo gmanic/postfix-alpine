@@ -40,6 +40,7 @@ docker build . -t rompe/postfix-alpine
 ```
 mkdir /tmp/postfix-config
 mkdir /tmp/postfix-spool
+mkdir /tmp/mail
 
 touch /tmp/postfix-config/bla.cf
 
@@ -47,7 +48,7 @@ echo "postconf -e 'mydomain = example.com'" > /tmp/postfix-config/foo.sh
 echo "postconf -e 'mydestination = example.com'" > /tmp/postfix-config/bar.sh
 echo "root: root" > /tmp/postfix-config/aliases
 
-docker run -p 50025:25 -v /tmp/postfix-config:/mnt/postfix-config:Z -v /tmp/postfix-spool:/var/spool/postfix:Z rompe/postfix-alpine
+docker run -p 50025:25 -v /tmp/postfix-config:/mnt/postfix-config:Z -v /tmp/postfix-spool:/var/spool/postfix:Z -v /tmp/mail:/var/spool/mail:Z rompe/postfix-alpine
 ```
 
 In another terminal:

@@ -13,6 +13,8 @@ EXPOSE 25/tcp 465/tcp 587/tcp
 
 VOLUME /mnt/postfix-config
 VOLUME /var/spool/postfix
+VOLUME /var/spool/mail
+VOLUME /var/spool/maildir
 
 #CMD /start.py
 #CMD /usr/bin/chaperone
