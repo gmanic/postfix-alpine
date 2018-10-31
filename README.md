@@ -11,6 +11,7 @@ I would have loved to use an official Postfix container, but that doesn't exist.
 `/mnt/postfix-config` should be mounted to a directory containing:
 
 * `*.cf`: Postfix configuration files that will be copied to `/etc/postfix`.
+* `aliases*`: Postfix configuration files that will be processed by `postalias` after being copied.
 * `*`: Postfix configuration files that will be processed by `postmap` after being copied.
 * `*.sh`: Shell scripts that will be executed, mainly containing `postconf` calls.
 

@@ -29,8 +29,12 @@ def main():
             logger.info("Copying %s to Postfix configuration.", entry)
             shutil.copy(abs_entry, config_dir)
             if extension == '':
-                logger.info("Running 'postmap %s'.", entry)
-                subprocess.call(["/usr/sbin/postmap", os.path.join(config_dir, entry)])
+                if entry.startswith("aliases"):
+                    logger.info("Running 'postalias %s'.", entry)
+                    subprocess.call(["/usr/sbin/postalias", os.path.join(config_dir, entry)])
+                else:
+                    logger.info("Running 'postmap %s'.", entry)
+                    subprocess.call(["/usr/sbin/postmap", os.path.join(config_dir, entry)])
     for shell_script in shell_scripts:
         logger.info("Running %s.", shell_script)
         subprocess.call(["/bin/sh", shell_script])
