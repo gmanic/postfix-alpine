@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk add --no-cache postfix postfix-sqlite postfix-pcre postfix-ldap python3 py2-pip
+RUN apk add --no-cache postfix postfix-sqlite postfix-pcre postfix-ldap python3 py2-pip procmail
 RUN pip3 install chaperone
 RUN mkdir -p /etc/chaperone.d
 COPY chaperone.conf /etc/chaperone.d/chaperone.conf
